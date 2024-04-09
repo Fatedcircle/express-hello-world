@@ -12,9 +12,9 @@ build-code-job:
 deploy-code-job:
   stage: deploy
   image: node:18-buster
-  variables:
+  # variables:
 	 # TODO: add link to github repository
-    GITHUB_URL:
+    # GITHUB_URL:
   before_script:
     - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
     - eval `ssh-agent -s`
