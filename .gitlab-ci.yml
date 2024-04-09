@@ -26,7 +26,7 @@ deploy-code-job:
     - ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
 
   script: 
-    - echo "Deploy test"
+    - echo "Deploy test1"
   tags:
     - docker
   needs:
