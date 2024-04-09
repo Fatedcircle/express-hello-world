@@ -29,3 +29,7 @@ deploy-code-job:
 		# TODO: push main to github
   tags:
     - docker
+
+    echo "$PRIVATE_SSH_KEY" > /tmp/private_key   # Sla de SSH-sleutel op in een tijdelijk bestand
+chmod 600 /tmp/private_key                  # Stel de juiste machtigingen in op het bestand
+ssh-add /tmp/private_key                    # Voeg de SSH-sleutel toe aan de SSH-agent
