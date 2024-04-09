@@ -1,28 +1,12 @@
 stages:
-  - test_javascript
-  - test_python
-  - test_php
+  - build
+  - deploy
 
-test_javascript:
-  stage: test_javascript
-  image: node:19.7.0-alpine3.17
+build-code-job:
+  stage: build
+  image: node:18-buster
   script:
-    - echo "Running JavaScript tests"
-  tags: 
-    - docker
-
-test_python:
-  stage: test_python
-  image: python:3.11.2-alpine3.17
-  script:
-    - echo "Running Python tests"
-  tags: 
-    - docker
-
-test_php:
-  stage: test_php
-  image: php:8.2.3-cli-alpine3.17
-  script:
-    - echo "Running PHP tests"
-  tags: 
+    - echo "building"
+    - echo "building completed"
+  tags:
     - docker
