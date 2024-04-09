@@ -23,9 +23,10 @@ deploy-code-job:
     - ssh-keyscan -t rsa gitlab.com >> ~/.ssh/known_hosts
     - ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
   script: 
+    - git merge feature
     - git clone $CI_REPOSITORY_URL
     - cd $CI_PROJECT_NAME
-    - git branch
+    - git push
   tags:
     - docker
   needs:
