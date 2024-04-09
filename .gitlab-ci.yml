@@ -25,9 +25,7 @@ deploy-code-job:
   script: 
     - git clone $CI_REPOSITORY_URL
     - cd $CI_PROJECT_NAME
-    - git merge feature
-    - git add -A && git commit -am "Update van files"
-    - git push
+    - git branch
   tags:
     - docker
   needs:
