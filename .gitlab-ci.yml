@@ -8,6 +8,8 @@ build-code-job:
   script:
     - echo "building"
     - echo "building completed"
+  tags:
+    - docker
 
 deploy-code-job:
   stage: deploy
@@ -25,3 +27,5 @@ deploy-code-job:
   script:
     # TODO: merge feature branch into main
 		# TODO: push main to github
+  tags:
+    - docker
