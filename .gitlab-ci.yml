@@ -25,7 +25,8 @@ deploy-code-job:
   script: 
     - git config --global user.email "jennifer.van.wijk@ziggo.nl"
     - git config --global user.name "Jennifer van Wijk"
-    - git merge origin/feature
+    - git checkout main
+    - git merge feature
     - git push
   tags:
     - docker
