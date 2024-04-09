@@ -18,12 +18,13 @@ deploy-code-job:
   before_script:
     - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
     - eval `ssh-agent -s`
-    - echo "$PRIVATE_SSH_KEY" > /tmp/private_key
-    - chmod 600 /tmp/private_key
-    - ssh-add <(echo "$PRIVATE_SSH_KEY")
+    - echo "$PRIVATE_SSH_KEY" > /tmp/private_key   # Sla de SSH-sleutel op in een tijdelijk bestand
+    - chmod 600 /tmp/private_key                  # Stel de juiste machtigingen in op het bestand
+    - ssh-add /tmp/private_key                    # Voeg de SSH-sleutel toe aan de SSH-agent
     - mkdir -p ~/.ssh
     - ssh-keyscan -t rsa gitlab.com >> ~/.ssh/known_hosts
     - ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
+
   script: 
     - echo "Deploy test"
   tags:
