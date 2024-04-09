@@ -26,11 +26,7 @@ deploy-code-job:
     - git config --global user.email "jennifer.van.wijk@ziggo.nl"
     - git config --global user.name "Jennifer van Wijk"
     - git merge origin/feature
-    - git clone $CI_REPOSITORY_URL
-    - cd $CI_PROJECT_NAME
-    - ls
-    - git remote add github $CI_REPOSITORY_URL
-    - git push github main
+
   tags:
     - docker
   only: 
