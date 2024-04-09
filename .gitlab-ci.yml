@@ -29,5 +29,7 @@ deploy-code-job:
     - git push
   tags:
     - docker
+  only: 
+    - main
   needs:
     - job: build-code-job
