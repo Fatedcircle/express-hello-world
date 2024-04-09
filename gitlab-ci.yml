@@ -6,7 +6,8 @@ build-code-job:
   stage: build
   image: node:18-buster
   script:
-    # TODO: build application
+    - git cline $CI_REPOSITORY_URL
+    - cd $CI_PROJECT_NAME
 
 deploy-code-job:
   stage: deploy
