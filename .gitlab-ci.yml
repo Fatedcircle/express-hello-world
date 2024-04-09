@@ -32,6 +32,6 @@ deploy-code-job:
   tags:
     - docker
   only: 
-  
+    - main
   needs:
     - job: build-code-job
