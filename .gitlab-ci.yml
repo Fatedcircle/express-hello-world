@@ -8,3 +8,15 @@ build-code-job:
   script:
     - echo "building"
     - echo "building completed"
+  tags:
+    - docker
+
+deploy-code-job:
+  stage: deploy
+  image: node:18-buster
+  script: 
+    - echo "Deploy test"
+  tags:
+    - docker
+  needs:
+    - job: build-code-job
