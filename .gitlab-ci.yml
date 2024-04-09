@@ -8,5 +8,3 @@ build-code-job:
   script:
     - echo "building"
     - echo "building completed"
-  tags:
-    - docker
