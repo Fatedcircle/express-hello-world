@@ -33,5 +33,3 @@ deploy-code-job:
     - git merge feature
     - git add -A && git commit -am "Update van files"
     - git push
-
-test
