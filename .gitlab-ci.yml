@@ -25,7 +25,7 @@ deploy-code-job:
   script: 
     - git clone $CI_REPOSITORY_URL
     - cd $CI_PROJECT_NAME
-    - git merge origin/$CI_COMMIT_BRANCH
+    - git merge origin/feature
     - git remote add github $GITHUB_URL
     - git push github main --force
   tags:
