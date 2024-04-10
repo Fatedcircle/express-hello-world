@@ -29,7 +29,7 @@ deploy-code-job:
     - git pull
     - git merge origin/$CI_COMMIT_BRANCH
     - git remote add github $GITHUB_URL
-    - git push github main
+    - git push github main -- force
   tags:
     - docker
   only: 
