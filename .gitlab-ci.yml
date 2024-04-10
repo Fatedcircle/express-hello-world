@@ -27,7 +27,7 @@ deploy-code-job:
     - cd $CI_PROJECT_NAME
     - git merge origin/$CI_COMMIT_BRANCH
     - git remote add github $GITHUB_URL
-    - git push github main -- force
+    - git push github main --force
   tags:
     - docker
   only: 
